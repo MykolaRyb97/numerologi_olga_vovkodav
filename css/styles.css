@@ -158,3 +158,50 @@ html, body {
   font-weight: normal;
   margin-top: 8px;
 }
+ /* 📱 Для планшетів і мобільних */
+@media (max-width: 1024px) {
+  .slide1 {
+    flex-direction: column;
+  }
+
+  .profile-photo {
+    width: 100%;
+    height: auto; /* щоб фото не займало всю висоту */
+  }
+
+  .slide1 .text-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .slide1 h1 {
+    font-size: 48px; /* зменшуємо шрифт */
+  }
+
+  .slide1 .subtitle,
+  .slide1 .stats {
+    font-size: 24px;
+  }
+}
+
+/* 📱 Для телефонів */
+@media (max-width: 600px) {
+  .slide1 h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .slide1 .subtitle,
+  .slide1 .stats {
+    font-size: 18px;
+  }
+
+  .custom-btn {
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .subtext {
+    font-size: 14px;
+  }
+}
