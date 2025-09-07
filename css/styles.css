@@ -46,13 +46,13 @@ html, body {
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  background: linear-gradient(135deg, #800020, #ff6b6b, #ffffff);
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
+  /* замінюємо фон */
+  background: radial-gradient(circle at center, #ffe6ec, #ffc0cb, #800020);
   color: #fff;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 .profile-photo {
   width: 50%;
@@ -79,7 +79,7 @@ html, body {
   font-family: 'Sloop Script Pro', cursive;
   font-size: 96px;
   margin-bottom: 40px;
-  color: #fff; /* чисто білий текст без підсвітки */
+  color: #8B4513; /* бурий колір */
   line-height: 1.2;
 }
 
@@ -90,7 +90,7 @@ html, body {
   font-size: 56px;
   margin: 10px 0;
   line-height: 1.3;
-  color: #fff;
+  color: #241e1c;
 }
 
 /* ---------------- СЛАЙД 2 ---------------- */
