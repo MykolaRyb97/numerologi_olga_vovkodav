@@ -130,8 +130,8 @@ html, body {
 
 /* Градиєнти для кнопок */
 .btn1 {
-  background: linear-gradient(135deg, #800020, #a83252);
-  color: #fff;
+  background: linear-gradient(135deg, #800020, #a83252, #f5e6d3);
+  color: #5a0020; /* темно-бордовий для контрасту на бежі */
 }
 
 .btn2 {
