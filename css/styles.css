@@ -9,6 +9,7 @@ html, body {
   width: 100%;
   min-height: 100vh;   /* fallback */
   min-height: 100dvh;  /* сучасний варіант */
+  height: auto;        /* дозволяємо розтягуватись */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,6 +49,9 @@ html, body {
   background: radial-gradient(circle at center, #ffe6ec, #ffc0cb, #800020);
   color: #fff;
   padding: 0;
+  height: auto;              /* важливо */
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .profile-photo {
@@ -162,6 +166,7 @@ html, body {
   .profile-photo {
     width: 100%;
     height: auto; 
+    object-fit: cover;
   }
 
   .slide1 .text-content {
@@ -181,6 +186,12 @@ html, body {
 
 /* 📱 Для телефонів */
 @media (max-width: 600px) {
+  .slide1 {
+    height: auto;
+    min-height: auto;
+    padding: 40px 20px;
+  }
+
   .slide1 h1 {
     font-size: 32px;
     margin-bottom: 20px;
@@ -198,11 +209,6 @@ html, body {
 
   .subtext {
     font-size: 14px;
-  }
-
-  .slide {
-    min-height: auto; /* дозволяємо слайду підлаштовуватися */
-    padding: 60px 20px; /* відступи зверху і знизу */
   }
 
   .slide2 {
