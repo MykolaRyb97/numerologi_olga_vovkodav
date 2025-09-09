@@ -2,26 +2,139 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Калькулятор матриці долі</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор Матриці Долі</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #c9d6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: #357abd;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #f9fafb;
+      border: 1px solid #e0e0e0;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-  <section class="slide calculator">
-    <h1>Калькулятор матриці долі</h1>
+  <div class="container">
+    <h1>Матриця Долі</h1>
+    <form id="matrix-form">
+      <label for="name">Ім'я:</label>
+      <input type="text" id="name" required>
 
-    <form id="matrixForm">
-      <label>Ваше ім’я:</label><br>
-      <input type="text" id="name" required><br><br>
-
-      <label>Дата народження:</label><br>
-      <input type="date" id="birthdate" required><br><br>
+      <label for="birthdate">Дата народження:</label>
+      <input type="date" id="birthdate" required>
 
       <button type="submit">Розрахувати</button>
     </form>
 
-    <div id="result"></div>
-  </section>
+    <div id="result" class="result" style="display:none;"></div>
+  </div>
 
-  <script src="js/matrix.js"></script>
+  <script>
+    function digitSum(num) {
+      while (num > 9) {
+        num = num.toString().split('').reduce((a, b) => a + Number(b), 0);
+      }
+      return num;
+    }
+
+    function nameToNumber(name) {
+      const alphabet = {
+        'А':1,'Б':2,'В':3,'Г':4,'Ґ':5,'Д':6,'Е':7,'Є':8,'Ж':9,
+        'З':1,'И':2,'І':3,'Ї':4,'Й':5,'К':6,'Л':7,'М':8,'Н':9,
+        'О':1,'П':2,'Р':3,'С':4,'Т':5,'У':6,'Ф':7,'Х':8,'Ц':9,
+        'Ч':1,'Ш':2,'Щ':3,'Ь':4,'Ю':5,'Я':6
+      };
+      let sum = 0;
+      name = name.toUpperCase().replace(/[^А-ЯҐЄІЇ]/g, '');
+      for (let ch of name) {
+        if (alphabet[ch]) sum += alphabet[ch];
+      }
+      return digitSum(sum);
+    }
+
+    document.getElementById("matrix-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const birthdate = document.getElementById("birthdate").value;
+
+      if (!birthdate) return;
+
+      const date = new Date(birthdate);
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+
+      const destiny = digitSum(day + month + year);
+      const soul = digitSum(day);
+      const karma = digitSum(month);
+      const talent = digitSum(
+        year.toString().split('').reduce((a,b)=>a+Number(b),0)
+      );
+      const nameNumber = nameToNumber(name);
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.display = "block";
+      resultDiv.innerHTML = `
+        <strong>Результати для ${name} (${birthdate}):</strong><br><br>
+        🔹 Число долі: <b>${destiny}</b><br>
+        🔹 Число душі: <b>${soul}</b><br>
+        🔹 Число карми: <b>${karma}</b><br>
+        🔹 Число таланту: <b>${talent}</b><br>
+        🔹 Число імені: <b>${nameNumber}</b>
+      `;
+    });
+  </script>
 </body>
 </html>
