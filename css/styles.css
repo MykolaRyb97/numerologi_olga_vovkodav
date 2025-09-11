@@ -145,7 +145,7 @@ html, body {
 }
 
 
-/* Додатковий текст у кнопках */
+
 .subtext {
   display: block;
   font-size: 18px;
@@ -153,7 +153,7 @@ html, body {
   margin-top: 8px;
 }
 
-/* 📱 Для планшетів і мобільних */
+
 @media (max-width: 1024px) {
   .slide1 {
     flex-direction: column;
@@ -211,4 +211,10 @@ html, body {
     padding-top: 80px;
     padding-bottom: 80px;
   }
+}
+footer {
+  text-align: center;
+  padding: 10px;
+  background: radial-gradient(circle at center, #ffe6ec, #ffc0cb, #800020);
+  border-top: 1px solid #ccc;
 }
