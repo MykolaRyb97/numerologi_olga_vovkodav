@@ -20,17 +20,17 @@ html, body {
 }
 
 @font-face {
-  font-family: 'Sloop Script Pro';
-  src: url('../fonts/SloopScriptPro.woff2') format('woff2'),
-       url('../fonts/SloopScriptPro.woff') format('woff');
+  font-family: 'DancingScript';
+  src: url('../fonts/DancingScript.woff2') format('woff2'),
+       url('../fonts/DancingScript.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Ferenz';
-  src: url('../fonts/Ferenz.woff2') format('woff2'),
-       url('../fonts/Ferenz.woff') format('woff');
+  font-family: 'Open_Sans';
+  src: url('../fonts/OpenSans.woff2') format('woff2'),
+       url('../fonts/OpenSans.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -76,17 +76,17 @@ html, body {
 
 /* Заголовок */
 .slide1 h1 {
-  font-family: 'Sloop Script Pro', cursive;
+  font-family: 'DancingScript', cursive;
   font-size: 86px;
   margin-bottom: 40px;
-  color: #8B4513;
+  color:#faf7f7;
   line-height: 1.2;
 }
 
 /* Параграфи */
 .slide1 .subtitle,
 .slide1 .stats {
-  font-family: 'Ferenz', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   font-size: 46px;
   margin: 10px 0;
   line-height: 1.3;
@@ -114,7 +114,7 @@ html, body {
   display: block;
   padding: 30px 20px;
   border-radius: 15px;
-  font-family: 'Ferenz', sans-serif;
+  font-family: 'Open_Sans', sans-serif;
   font-size: 28px;
   font-weight: bold;
   text-decoration: none;
