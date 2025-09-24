@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat-Regular', serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;   /* повна висота вікна */

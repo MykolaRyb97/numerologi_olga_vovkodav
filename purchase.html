@@ -9,18 +9,19 @@
 </head>
 <body>
   <header>
-  <nav class="menu">
-    <a href="index.html">Головна</a>
-    <a href="purchase.html">Придбати</a>
-  </nav>
-</header>
+    <nav class="menu">
+      <a href="index.html">Головна</a>
+      <a href="purchase.html">Придбати</a>
+    </nav>
+  </header>
 
   <main>
     <section class="purchase">
       <h1>Придбати методичку</h1>
       <p>Тут можна оформити покупку нашої методички з матриці долі.</p>
 
-      <form action="#" method="post" class="purchase-form">
+      <!-- Основна форма -->
+      <form id="userForm" class="purchase-form">
         <label for="name">Ваше ім’я:</label>
         <input type="text" id="name" name="name" required>
 
@@ -30,16 +31,38 @@
         <label for="product">Виберіть товар:</label>
         <select id="product" name="product">
           <option value="methodic">Методичка з матриці долі</option>
-
         </select>
 
-        <button type="submit">Придбати</button>
+        <!-- Кнопка -->
+        <button type="button" onclick="payWithLiqPay()">Придбати</button>
+      </form>
+
+      <!-- Прихована форма для LiqPay -->
+      <form id="liqpayForm" method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8" style="display:none;">
+        <input type="hidden" name="data" id="liqpayData" value="ВАШ_DATA">
+        <input type="hidden" name="signature" id="liqpaySignature" value="ВАШ_SIGNATURE">
       </form>
     </section>
   </main>
 
   <footer class="fixed-footer">
-  <p>© 2025 Ольга Вовкодав - нумеролог</p>
-</footer>
+    <p>© 2025 Ольга Вовкодав - нумеролог</p>
+  </footer>
+
+  <script>
+    function payWithLiqPay() {
+      // Тут ви можете перевірити правильність введених даних
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      if (!name || !email) {
+        alert("Будь ласка, заповніть усі поля!");
+        return;
+      }
+
+      // Надалі можна підставити динамічний order_id чи description
+      document.getElementById("liqpayForm").submit();
+    }
+  </script>
 </body>
 </html>
