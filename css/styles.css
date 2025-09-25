@@ -127,19 +127,6 @@ html, body {
   background: linear-gradient(135deg, #800020, #a83252, #f5e6d3);
   color:  #fff; /* темно-бордовий для контрасту на бежі */
 }
-
-.btn2 {
-  background: linear-gradient(135deg, #a83252, #c94f7c);
-  color: #fff;
-}
-
-.btn3 {
-  background: linear-gradient(135deg, #c94f7c, #e48fae);
-  color: #fff;
-}
-
-
-
 .subtext {
   display: block;
   font-size: 18px;
@@ -211,4 +198,86 @@ footer {
   padding: 10px;
   background: radial-gradient(circle at center, #ffe6ec, #ffc0cb, #800020);
   border-top: 1px solid #ccc;
+}
+/* Шапка */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: radial-gradient(circle at center, #ffe6ec, #ffc0cb, #800020);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  z-index: 1000;
+  color:#080808;
+  font-weight: bold;
+}
+
+/* Ліва частина */
+.top-left {
+  font-size: 14px;
+}
+
+/* Центр (меню) */
+.top-center {
+  display: flex;
+  gap: 25px;
+}
+
+.top-center a {
+  color: #080808;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.top-center a:hover {
+  color: #080808;
+}
+
+/* Права частина (соцмережі) */
+.top-right {
+  display: flex;
+  gap: 15px;
+}
+
+.top-right a {
+  color:#080808;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.top-right a:hover {
+  color:#080808;
+}
+
+/* Відступ для контенту, щоб не ховався під шапку */
+body {
+  margin: 0;
+  padding-top: 60px;
+}
+.photo-slider {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-slider img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.photo-slider img.active {
+  opacity: 1;
 }
