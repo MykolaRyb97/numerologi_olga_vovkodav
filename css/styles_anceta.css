@@ -1,0 +1,72 @@
+/* Шапка */.top-bar {
+  width: 100%;
+  height: 100px;              /* зробили вищу шапку */
+  background-color: #8c1130;  /* однотонний колір */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.left-info {
+  display: flex;
+  flex-direction: column;     /* розташовуємо текст над номером */
+  font-weight: 500;
+}
+
+.phone {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.center-menu {
+  display: flex;
+  gap: 30px;                  /* відстань між кнопками */
+}
+
+.center-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.center-menu a:hover {
+  text-decoration: underline;
+}
+
+.right-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.right-icons img {
+  width: 28px;                /* розмір іконок */
+  height: 28px;
+  filter: invert(100%);       /* зробить іконки білі, якщо вони чорні */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.right-icons img:hover {
+  transform: scale(1.1);
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1; /* займає весь простір між хедером і футером */
+}
+
+ footer {
+  text-align: center;
+  padding: 10px;
+  background: radial-gradient(circle at center, #ffe6ec, #ffc0cb, #800020);
+  border-top: 1px solid #ccc;
+}
