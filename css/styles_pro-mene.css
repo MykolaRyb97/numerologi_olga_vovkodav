@@ -1,0 +1,180 @@
+:root {
+  --main-color: #800020;
+  --accent-color: #8c1130;
+  --highlight: #99062b;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ----------------- ХЕДЕР ----------------- */
+.top-bar {
+  width: 100%;
+  height: 100px;
+  background-color: #8c1130;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.left-info {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.phone {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.center-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.center-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.center-menu a:hover {
+  text-decoration: underline;
+}
+
+.right-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.right-icons img {
+  width: 28px;
+  height: 28px;
+  filter: invert(100%);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.right-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Адаптивність хедера */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .left-info {
+    flex-direction: column;
+  }
+  .center-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .right-icons {
+    margin-top: 10px;
+  }
+}
+
+/* ----------------- Сторінка “Про мене” ----------------- */
+.about-me {
+  width: 100%;
+  min-height: 100vh;
+  background: #f9f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap; /* адаптивність */
+}
+
+.about-photo {
+  flex: 1 1 45%;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-text {
+  flex: 1 1 50%;
+}
+
+.about-text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #800020;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Планшет */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-photo,
+  .about-text {
+    flex: 1 1 100%;
+  }
+
+  .about-text h1 {
+    font-size: 28px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+  }
+}
+
+/* Мобільний */
+@media (max-width: 600px) {
+  .about-text h1 {
+    font-size: 24px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+  }
+}
+
+/* ----------------- ФУТЕР ----------------- */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: radial-gradient(circle at center, #ffe6ec, #ffc0cb, #800020);
+  border-top: 1px solid #ccc;
+}
+.about-text p {
+  text-align: justify;
+  text-justify: inter-word; /* більш рівномірні пробіли між словами */
+}
