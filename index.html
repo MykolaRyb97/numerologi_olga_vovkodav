@@ -80,14 +80,15 @@
   </footer>
 
 <script>
-  const burger = document.getElementById('burger');
-  const menu = document.querySelector('.center-menu');
-  const icons = document.querySelector('.right-icons');
+ document.addEventListener("DOMContentLoaded", () => {
+  const burgerBtn = document.getElementById("burgerBtn");
+  const menu = document.querySelector(".center-menu");
 
-  burger.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    icons.classList.toggle('active');
+  burgerBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    burgerBtn.classList.toggle("open"); // для анімації хрестика
   });
+});
 </script>
 </body>
 </html>
