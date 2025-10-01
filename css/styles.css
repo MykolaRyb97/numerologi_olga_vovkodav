@@ -24,6 +24,7 @@ html, body {
   color: #fff;
 }
 
+/* Ліва частина */
 .left-info {
   display: flex;
   flex-direction: column;
@@ -34,7 +35,13 @@ html, body {
   font-size: 14px;
   opacity: 0.9;
 }
-
+.logo {
+  max-width: 40px; /* спробуй 40px, 60px або 80px для різних розмірів */
+  height: auto;
+  display: block;
+  margin: 0 auto 5px; /* вирівняє по центру і зробить відступ від тексту */
+}
+/* Меню */
 .center-menu {
   display: flex;
   gap: 30px;
@@ -50,9 +57,11 @@ html, body {
   text-decoration: underline;
 }
 
+/* Соц. іконки */
 .right-icons {
   display: flex;
   gap: 15px;
+  align-items: center;
 }
 
 .right-icons img {
@@ -67,22 +76,56 @@ html, body {
   transform: scale(1.1);
 }
 
-/* Адаптивність хедера */
+/* --- Бургер --- */
+.burger {
+  display: none; /* прихований на десктопі */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* --- Адаптивність --- */
 @media (max-width: 768px) {
   .top-bar {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
+    height: auto;
+    padding: 10px 20px;
   }
-  .left-info {
-    flex-direction: column;
-  }
+
   .center-menu {
-    flex-wrap: wrap;
-    justify-content: center;
+    display: none; /* меню ховаємо */
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: #8c1130;
+    padding: 15px;
+    border-radius: 5px;
   }
+
+  .center-menu a {
+    display: block;
+    padding: 8px 0;
+  }
+
+  .center-menu.active {
+    display: flex; /* показуємо при кліку */
+  }
+
+  .burger {
+    display: flex; /* показуємо бургер */
+  }
+
   .right-icons {
-    margin-top: 10px;
+    gap: 10px;
   }
 }
 

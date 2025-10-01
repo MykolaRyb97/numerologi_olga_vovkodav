@@ -9,18 +9,25 @@
 </head>
 <body>
  <header class="top-bar">
+  <!-- Ліва частина: логотип + ім’я + телефон -->
   <div class="left-info">
-    <span class="site-name">Оля ВОВКОДАВ</span><br>
-    <span class="phone"> +38 (066) 626 37 71</span>
+    <img src="images/matrix.png" alt="Логотип" class="logo">
+    <div class="text-info">
+      <span class="site-name">Оля ВОВКОДАВ</span><br>
+      <span class="phone">+38 (066) 626 37 71</span>
+    </div>
   </div>
 
-  <nav class="center-menu">
+  <!-- Меню -->
+  <nav class="center-menu" id="navMenu">
+    <a href="index.html.html">Головна</a>
     <a href="pro-mene.html">Про мене</a>
     <a href="anceta_user.html">Методичка 22 енергії</a>
     <a href="navchannya.html">Навчання</a>
-     <a href="gra-lila.html">Гра Ліла</a>
+    <a href="gra-lila.html">Гра Ліла</a>
   </nav>
 
+  <!-- Соцмережі + бургер -->
   <div class="right-icons">
     <a href="https://t.me/+r7B0fT72uIRjNDgy" target="_blank">
       <img src="images/telegram-icon.png" alt="Telegram">
@@ -28,8 +35,16 @@
     <a href="https://www.instagram.com/olga_vovkodav_numerology18?igsh=MXhua25nb3Uybnd3cA=" target="_blank">
       <img src="images/instagram-icon.png" alt="Instagram">
     </a>
+
+    <!-- Бургер-кнопка -->
+    <div class="burger" id="burgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </header>
+
 <!-- Слайд 1: Про мене -->
 <section class="slide slide1">
     <a href="anceta_user.html" class="banner">
@@ -63,5 +78,16 @@
 <footer>
     <p>© 2025 Ольга Вовкодав - нумеролог</p>
   </footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const menu = document.querySelector('.center-menu');
+  const icons = document.querySelector('.right-icons');
+
+  burger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    icons.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
