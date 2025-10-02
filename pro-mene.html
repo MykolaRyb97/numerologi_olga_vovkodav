@@ -90,5 +90,16 @@
 <footer>
     <p>© 2025 Ольга Вовкодав - нумеролог</p>
   </footer>
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+  const burgerBtn = document.getElementById("burgerBtn");
+  const menu = document.querySelector(".center-menu");
+
+  burgerBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    burgerBtn.classList.toggle("open"); // для анімації хрестика
+  });
+});
+</script>
 </body>
 </html>
