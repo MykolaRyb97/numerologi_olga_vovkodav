@@ -246,8 +246,15 @@ ul {
 
 /* ----------------- ФУТЕР ----------------- */
 footer {
+  width: 100%;
   text-align: center;
-  padding: 10px;
+  padding: 15px 10px;
   background: radial-gradient(circle at center, #ffe6ec, #ffc0cb, #800020);
   border-top: 1px solid #ccc;
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
