@@ -3,83 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Придбати</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <title>Методичка по матриці долі </title>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles_anceta.css">
 </head>
 <body>
   <header class="top-bar">
+  <!-- Ліва частина: логотип + ім’я + телефон -->
   <div class="left-info">
-    <span class="site-name">Мій сайт</span><br>
-    <span class="phone"> +38 (066) 626 37 71</span>
+    <img src="images/matrix.png" alt="Логотип" class="logo">
+    <div class="text-info">
+      <span class="site-name">Оля ВОВКОДАВ</span><br>
+      <span class="phone">+38 (066) 626 37 71</span>
+    </div>
   </div>
 
-  <nav class="center-menu">
+  <!-- Меню -->
+  <nav class="center-menu" id="navMenu">
     <a href="index.html">Головна</a>
     <a href="pro-mene.html">Про мене</a>
-    <a href="anceta_user.html">Методичка 22 енергії</a>
+    <a href="anceta_user.html">Методичка по матриці долі</a>
     <a href="navchannya.html">Навчання</a>
-     <a href="gra-lila.html">Гра Ліла</a>
+    <a href="gra-lila.html">Гра Ліла</a>
   </nav>
 
+  <!-- Соцмережі + бургер -->
   <div class="right-icons">
     <a href="https://t.me/+r7B0fT72uIRjNDgy" target="_blank">
-      <img src="telegram-icon.png" alt="Telegram">
+      <img src="images/telegram-icon.png" alt="Telegram">
     </a>
     <a href="https://www.instagram.com/olga_vovkodav_numerology18?igsh=MXhua25nb3Uybnd3cA=" target="_blank">
-      <img src="instagram-icon.png" alt="Instagram">
+      <img src="images/instagram-icon.png" alt="Instagram">
     </a>
+
+    <!-- Бургер-кнопка -->
+    <div class="burger" id="burgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </header>
 
-  <main>
-    <section class="purchase">
-      <h1>Придбати методичку</h1>
-      <p>Тут можна оформити покупку нашої методички з матриці долі.</p>
+<section class="about-me">
+  <div class="about-container">
+    <!-- Ліва колонка: фото -->
+    <div class="about-photo">
+      <img src="images/matrucia.jpg" alt="Ольга Вовкодав">
+    </div>
 
-      <!-- Основна форма -->
-      <form id="userForm" class="purchase-form">
-        <label for="name">Ваше ім’я:</label>
-        <input type="text" id="name" name="name" required>
+    <!-- Права колонка: текст -->
+    <div class="about-text">
+      <h1>Методичка “Матриця долі”</h1>
+      <p>Ваш особистий путівник у світ енергій.
+У ній зібрано пояснення кожної енергії матриці — від загальної характеристики до глибших деталей та практичних підказок.</p>
+     <h2>Цей матеріал допоможе:</h2>
+      <p>• краще зрозуміти власні сильні сторони й потенціал;
+• побачити приховані ресурси та виклики;
+• отримати структуровану інформацію для роботи з собою чи клієнтами.</p>
 
-        <label for="email">Електронна пошта:</label>
-        <input type="email" id="email" name="email" required>
+      <p>Лаконічно, зрозуміло й без зайвої «води» — усе, щоб ви могли одразу застосувати знання на практиці.</p>
 
-        <label for="product">Виберіть товар:</label>
-        <select id="product" name="product">
-          <option value="methodic">Методичка з матриці долі</option>
-        </select>
 
-        <!-- Кнопка -->
-        <button type="button" onclick="payWithLiqPay()">Придбати</button>
-      </form>
 
-      <!-- Прихована форма для LiqPay -->
-      <form id="liqpayForm" method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8" style="display:none;">
-        <input type="hidden" name="data" id="liqpayData" value="ВАШ_DATA">
-        <input type="hidden" name="signature" id="liqpaySignature" value="ВАШ_SIGNATURE">
-      </form>
-    </section>
-  </main>
+    </div>
+  </div>
+</section>
 
-  <footer class="fixed-footer">
+
+<footer>
     <p>© 2025 Ольга Вовкодав - нумеролог</p>
   </footer>
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+  const burgerBtn = document.getElementById("burgerBtn");
+  const menu = document.querySelector(".center-menu");
 
-  <script>
-    function payWithLiqPay() {
-      // Тут ви можете перевірити правильність введених даних
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-
-      if (!name || !email) {
-        alert("Будь ласка, заповніть усі поля!");
-        return;
-      }
-
-      // Надалі можна підставити динамічний order_id чи description
-      document.getElementById("liqpayForm").submit();
-    }
-  </script>
+  burgerBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    burgerBtn.classList.toggle("open"); // для анімації хрестика
+  });
+});
+</script>
 </body>
 </html>
