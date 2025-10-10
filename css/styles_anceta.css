@@ -252,11 +252,15 @@ ul {
     border-radius: 10px;
   }
 }
- /* ----------------- ФОРМА ЗАЯВКИ ----------------- */
+/* ----------------- ФОРМА ЗАЯВКИ ----------------- */
 .order-form {
   background: #f9f5f5;
   padding: 60px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .order-form h2 {
@@ -269,33 +273,42 @@ ul {
   font-size: 18px;
   margin-bottom: 30px;
   color: #333;
+  max-width: 600px;
 }
 
 .order-form form {
+  width: 100%;
   max-width: 500px;
-  margin: 0 auto;
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
+  box-sizing: border-box;
 }
 
 .order-form label {
   text-align: left;
   font-weight: 600;
   color: #800020;
+  font-size: 16px;
 }
 
 .order-form input {
-  padding: 12px;
+  width: 100%;
+  padding: 12px 14px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
   outline: none;
-  transition: border 0.3s;
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
 .order-form input:focus {
   border-color: #8c1130;
+  box-shadow: 0 0 4px rgba(140, 17, 48, 0.3);
 }
 
 .order-form button {
@@ -306,11 +319,12 @@ ul {
   border-radius: 8px;
   font-size: 18px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .order-form button:hover {
   background: #99062b;
+  transform: scale(1.02);
 }
 
 #formMessage {
@@ -323,16 +337,69 @@ ul {
   display: none;
 }
 
-/* --- Адаптивність --- */
-@media (max-width: 600px) {
+/* ----------------- АДАПТИВНІСТЬ ----------------- */
+
+/* Планшети */
+@media (max-width: 992px) {
   .order-form h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
+
   .order-form p {
     font-size: 16px;
   }
-  .order-form input, .order-form button {
-    font-size: 14px;
+
+  .order-form form {
+    padding: 25px 20px;
+    max-width: 450px;
+  }
+
+  .order-form input,
+  .order-form button {
+    font-size: 15px;
+  }
+}
+
+/* Мобільні телефони */
+@media (max-width: 600px) {
+  .order-form {
+    padding: 40px 15px;
+  }
+
+  .order-form h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .order-form p {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .order-form form {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 15px;
+    gap: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .order-form label {
+    font-size: 15px;
+  }
+
+  .order-form input {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .order-form button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  #formMessage {
+    font-size: 16px;
   }
 }
 
