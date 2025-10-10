@@ -35,11 +35,12 @@ html, body {
   font-size: 14px;
   opacity: 0.9;
 }
+
 .logo {
-  max-width: 40px; /* спробуй 40px, 60px або 80px для різних розмірів */
+  max-width: 40px;
   height: auto;
   display: block;
-  margin: 0 auto 5px; /* вирівняє по центру і зробить відступ від тексту */
+  margin: 0 auto 5px;
 }
 
 /* Меню */
@@ -66,7 +67,6 @@ html, body {
   align-items: center;
 }
 
-/* Іконки у натуральних кольорах */
 .right-icons img {
   width: 28px;
   height: 28px;
@@ -81,7 +81,7 @@ html, body {
 
 /* --- Бургер --- */
 .burger {
-  display: none;
+  display: none; /* прихований на десктопі */
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
@@ -95,6 +95,48 @@ html, body {
   transition: all 0.3s ease;
 }
 
+/* --- АДАПТИВНІСТЬ ХЕДЕРА --- */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: row;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  /* Меню сховане за замовчуванням */
+  .center-menu {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: #8c1130;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .center-menu a {
+    display: block;
+    padding: 8px 0;
+  }
+
+  /* Показуємо меню при кліку */
+  .center-menu.active {
+    display: flex;
+  }
+
+  /* Показуємо бургер */
+  .burger {
+    display: flex;
+  }
+
+  .right-icons {
+    gap: 10px;
+  }
+}
+
+/* --- Анімація перетворення смужок у хрестик --- */
 .burger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
