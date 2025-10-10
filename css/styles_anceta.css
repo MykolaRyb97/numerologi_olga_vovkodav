@@ -252,6 +252,90 @@ ul {
     border-radius: 10px;
   }
 }
+ /* ----------------- ФОРМА ЗАЯВКИ ----------------- */
+.order-form {
+  background: #f9f5f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.order-form h2 {
+  color: #800020;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.order-form p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.order-form form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-form label {
+  text-align: left;
+  font-weight: 600;
+  color: #800020;
+}
+
+.order-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.order-form input:focus {
+  border-color: #8c1130;
+}
+
+.order-form button {
+  background: #8c1130;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.order-form button:hover {
+  background: #99062b;
+}
+
+#formMessage {
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- Адаптивність --- */
+@media (max-width: 600px) {
+  .order-form h2 {
+    font-size: 24px;
+  }
+  .order-form p {
+    font-size: 16px;
+  }
+  .order-form input, .order-form button {
+    font-size: 14px;
+  }
+}
+
 footer {
   width: 100%;
   text-align: center;
