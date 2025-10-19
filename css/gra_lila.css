@@ -1,0 +1,405 @@
+:root {
+  --main-color: #800020;
+  --accent-color: #8c1130;
+  --highlight: #99062b;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ----------------- ХЕДЕР ----------------- */
+.top-bar {
+  width: 100%;
+  height: 100px;
+  background-color: #8c1130;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+/* Ліва частина */
+.left-info {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.phone {
+  font-size: 14px;
+  opacity: 0.9;
+}
+.logo {
+  max-width: 40px; /* спробуй 40px, 60px або 80px для різних розмірів */
+  height: auto;
+  display: block;
+  margin: 0 auto 5px; /* вирівняє по центру і зробить відступ від тексту */
+}
+/* Меню */
+.center-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.center-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.center-menu a:hover {
+  text-decoration: underline;
+}
+
+/* Соц. іконки */
+.right-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Іконки у натуральних кольорах */
+.right-icons img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  filter: none !important;
+}
+
+.right-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* --- Бургер --- */
+.burger {
+  display: none; /* прихований на десктопі */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* --- Адаптивність --- */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: row;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .center-menu {
+    display: none; /* меню ховаємо */
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: #8c1130;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .center-menu a {
+    display: block;
+    padding: 8px 0;
+  }
+
+  .center-menu.active {
+    display: flex; /* показуємо при кліку */
+  }
+
+  .burger {
+    display: flex; /* показуємо бургер */
+  }
+
+  .right-icons {
+    gap: 10px;
+  }
+}
+/* Анімація перетворення смужок у хрестик */
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.burger span {
+  transition: all 0.3s ease;
+}
+ .about-me {
+  width: 100%;
+  min-height: 100vh;
+  background: #f9f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* ---- Слайдер для фото ---- */
+.about-photo {
+  flex: 1 1 45%;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-photo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Показуємо активне фото */
+.about-photo img.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* ---- Кнопки для перемикання фото ---- */
+.about-photo button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  color: #333;
+  font-size: 32px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  z-index: 3;
+}
+
+.about-photo button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.about-photo .prev {
+  left: 10px;
+}
+
+.about-photo .next {
+  right: 10px;
+}
+
+/* ---- Слайдер для фото ---- */
+.about-photo {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-photo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Показуємо активне фото */
+.about-photo img.active {
+  opacity: 1;
+  z-index: 2;
+}
+/* ---- Кнопки для перемикання фото ---- */
+.about-photo button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  color: #333;
+  font-size: 32px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  z-index: 3;
+}
+
+.about-photo button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.about-photo .prev {
+  left: 10px;
+}
+
+.about-photo .next {
+  right: 10px;
+}
+/* Текстові блоки */
+.about-text,
+.about-fulltext {
+  flex: 1 1 50%;
+}
+
+/* Заголовки */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--main-color);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Абзаци */
+.about-text p,
+.about-fulltext p {
+  font-size: 22px;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 18px;
+}
+
+/* Списки */
+ul {
+  margin: 10px 0 20px 30px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ----------------- АДАПТИВНІСТЬ ----------------- */
+
+/* Планшети */
+@media (max-width: 992px) {
+  .top-bar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .center-menu {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: var(--accent-color);
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .center-menu.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-photo, .about-text, .about-fulltext {
+    flex: 1 1 100%;
+  }
+
+  h1, h2, h3, h4 {
+    font-size: 28px;
+  }
+
+  /* 👇 адаптація тексту в обох div */
+  .about-text p,
+  .about-fulltext p,
+  ul {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* Мобільні телефони */
+@media (max-width: 600px) {
+  h1, h2, h3, h4 {
+    font-size: 22px;
+  }
+
+  /* 👇 однаковий шрифт у всіх текстових блоках */
+  .about-text p,
+  .about-fulltext p,
+  ul {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .center-menu {
+    right: 10px;
+    top: 70px;
+  }
+
+  .right-icons img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* 👇 адаптивний футер */
+  footer {
+    padding: 12px 8px;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+
+
+/* ----------------- ФУТЕР ----------------- */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px 10px;
+  background: radial-gradient(circle at center, #ffe6ec, #ffc0cb, #800020);
+  border-top: 1px solid #ccc;
+  color: #99062b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
